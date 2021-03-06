@@ -37,7 +37,7 @@ pipeline {
                 script {
                     sh "terraform workspace select dev || terraform workspace new dev"
                     env.CHANGES = sh (
-                        script: 'terraform plan -input=false -var-file=env.tfvars/dev-env.tfvars -out=tfplan -detailed-exitcode',
+                        script: "terraform plan -input=false -var-file=env.tfvars/dev-env.tfvars -out=tfplan -detailed-exitcode",
                         returnStdout: false, returnStatus: true
                     )
                     if (env.CHANGES == '1') {
