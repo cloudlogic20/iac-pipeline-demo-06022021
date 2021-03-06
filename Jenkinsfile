@@ -57,7 +57,7 @@ pipeline {
                 expression { env.CHANGES == '2' }
             }
             steps {
-                sh "terraform apply -auto-approve"
+                sh "terraform apply -var-file=env.tfvars/dev-env.tfvars -auto-approve"
             }
         }
     }
