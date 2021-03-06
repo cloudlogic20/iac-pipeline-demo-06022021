@@ -57,7 +57,7 @@ pipeline {
                 expression { env.CHANGES == '2' }
             }
             steps {
-                sh "terraform apply tfplan -auto-approve"
+                sh "terraform apply -auto-approve tfplan"
             }
         }
     }
